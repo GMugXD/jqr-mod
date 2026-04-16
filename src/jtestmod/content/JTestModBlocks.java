@@ -1,4 +1,4 @@
-package javacamod.content;
+package jtestmod.content;
 
 import arc.graphics.*;
 import arc.graphics.g2d.*;
@@ -44,10 +44,16 @@ import javacamod.world.blocks.decoration.*;
 
 @SuppressWarnings("deprecation")
 public class jTestModBlocks{
-public static Block dumbWall;
+public static Block dumbWall, dumbWallTheSecond;
 
 public static void load() {
 dumbWall = new Wall("dumb-wall"){{
+health = 100;
+size = 1;
+requirements(Category.defense);
+}};
+
+dumbWallTheSecond = new Wall("dumb-wall-two"){{
 health = 100;
 size = 1;
 requirements(Category.defense);
