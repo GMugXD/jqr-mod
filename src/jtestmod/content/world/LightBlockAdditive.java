@@ -1,5 +1,23 @@
 package jtestmod.content.world;
 
+package mindustry.world.blocks.power;
+
+import arc.graphics.g2d.*;
+import arc.math.*;
+import arc.math.geom.*;
+import arc.scene.ui.layout.*;
+import arc.struct.*;
+import arc.util.*;
+import arc.util.io.*;
+import mindustry.annotations.Annotations.*;
+import mindustry.gen.*;
+import mindustry.graphics.*;
+import mindustry.input.*;
+import mindustry.logic.*;
+import mindustry.ui.*;
+import mindustry.world.*;
+import mindustry.world.meta.*;
+import mindustry.Vars.*;
 import arc.graphics.Blending;
 import arc.graphics.g2d.Draw;
 import arc.graphics.g2d.Draw.color;
@@ -12,7 +30,7 @@ public class LightBlockAdditive extends LightBlock{
         super(name);
 
     @Override
-    public void draw(){
+    public draw(){
         super.draw();
         Draw.blend(Blending.additive);
         Draw.color(Tmp.c1.set(color), efficiency * 0.3f);
