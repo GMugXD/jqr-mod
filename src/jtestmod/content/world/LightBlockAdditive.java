@@ -2,7 +2,9 @@ package jtestmod.content.world;
 
 import arc.graphics.Blending;
 import arc.graphics.g2d.Draw;
+import arc.graphics.g2d.Draw.color;
 import arc.util.Tmp;
+import mindustry.logic.LAccess.efficiency;
 import mindustry.world.blocks.power.LightBlock;
 
 public class LightBlockAdditive extends LightBlock{
