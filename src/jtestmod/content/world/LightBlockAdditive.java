@@ -1,7 +1,5 @@
 package jtestmod.content.world;
 
-package mindustry.world.blocks.power;
-
 import arc.graphics.g2d.*;
 import arc.math.*;
 import arc.math.geom.*;
