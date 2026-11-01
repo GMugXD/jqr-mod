@@ -1,0 +1,24 @@
+package jtestmod.content.world;
+
+import arc.graphics.Blending;
+import arc.graphics.g2d.Draw;
+import arc.util.Tmp;
+import mindustry.world.blocks.power.LightBlock;
+
+public class LightBlockAdditive extends LightBlock{
+    public LightBlockAdditive(String name){
+        super(name);
+
+    @Override
+    public void draw(){
+        super.draw();
+        Draw.blend(Blending.additive);
+        Draw.color(Tmp.c1.set(color), efficiency * 0.3f);
+        Draw.rect(topRegion, x, y);
+        Draw.color();
+        Draw.blend();
+        }
+    }
+}
+
+    
