@@ -28,7 +28,7 @@ public class LightBlockAdditive extends LightBlock{
         super(name);
 
         @Override
-        public void draw{
+        public void draw{{
             super.draw();
             Draw.blend(Blending.additive);
             Draw.color(Tmp.c1.set(color), efficiency * 0.3f);
@@ -37,6 +37,7 @@ public class LightBlockAdditive extends LightBlock{
             Draw.blend();
         }
     }
+}
 }
 
     
