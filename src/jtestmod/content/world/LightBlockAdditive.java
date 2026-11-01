@@ -26,10 +26,9 @@ import mindustry.world.blocks.power.LightBlock;
 public class LightBlockAdditive extends LightBlock{
     public LightBlockAdditive(String name){
         super(name);
-
+    }
         @Override
-        public void draw{{
-            super.draw();
+        public void draw(){
             Draw.blend(Blending.additive);
             Draw.color(Tmp.c1.set(color), efficiency * 0.3f);
             Draw.rect(topRegion, x, y);
@@ -38,6 +37,6 @@ public class LightBlockAdditive extends LightBlock{
         }
     }
 }
-}
+
 
     
