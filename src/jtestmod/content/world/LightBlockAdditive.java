@@ -103,9 +103,11 @@ public class LightBlockAdditive extends Block{
         @Override
         public void draw(){
             super.draw();
-            Draw.color(Tmp.c1.set(color), 0.4f);
+            Draw.blend(Blending.additive);
+            Draw.color(Tmp.c1.set(color), efficiency * 0.3f);
             Draw.rect(topRegion, x, y);
             Draw.color();
+            Draw.blend();
         }
 
         @Override
