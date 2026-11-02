@@ -1,4 +1,4 @@
-package jtestmod.content;
+package jtestmod;
 
 import arc.Events;
 import arc.util.Log;
