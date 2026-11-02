@@ -1,6 +1,5 @@
 package jtestmod.content.world;
 
-import arc.Core;
 import arc.graphics.g2d.*;
 import arc.math.*;
 import arc.math.geom.*;
@@ -8,6 +7,7 @@ import arc.scene.ui.layout.*;
 import arc.struct.*;
 import arc.util.*;
 import arc.util.io.*;
+import mindustry.annotations.Annotations.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.input.*;
@@ -15,21 +15,13 @@ import mindustry.logic.*;
 import mindustry.ui.*;
 import mindustry.world.*;
 import mindustry.world.meta.*;
-import arc.graphics.Blending;
 
 import static mindustry.Vars.*;
 
 public class LightBlockAdditive extends Block{
     public float brightness = 0.9f;
     public float radius = 200f;
-
-    public TextureRegion topRegion;
-
-    @Override
-    public void load(){
-    super.load();
-    topRegion = Core.atlas.find(name + "-top");
-}
+    public @Load("@-top") TextureRegion topRegion;
 
     public LightBlockAdditive(String name){
         super(name);
