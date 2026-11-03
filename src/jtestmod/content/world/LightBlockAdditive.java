@@ -1,4 +1,4 @@
-package jtestmod.content.world;
+package jqrmod.content.world;
 
 import arc.Core;
 import arc.graphics.g2d.*;

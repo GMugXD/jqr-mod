@@ -1,14 +1,14 @@
-package jtestmod;
+package jqrmod;
 
 import arc.util.Log;
-import jtestmod.content.world.LightBlockAdditive;
+import jqrmod.content.world.LightBlockAdditive;
 import mindustry.mod.ClassMap;
 import mindustry.mod.Mod;
 
-public class JTestMod extends Mod {
+public class JQrmod extends Mod {
 
-    public JTestMod() {
-        Log.info("Loaded JTestMod constructor.");
+    public JQrmod() {
+        Log.info("Loaded JQrmod constructor.");
 
         ClassMap.classes.put(
             "LightBlockAdditive",
@@ -18,6 +18,6 @@ public class JTestMod extends Mod {
 
     @Override
     public void loadContent() {
-        Log.info("Loading some example content.");
+        Log.info("Loading JQrmod content. Version v1");
     }
 }
