@@ -118,7 +118,7 @@ public class LightBlockAdditive extends Block{
         @Override
         public void buildConfiguration(Table table){
             table.button(Icon.pencil, Styles.cleari, () -> {
-                ui.picker.show(Tmp.c1.set(color).a(0.5f), false, res -> configure(res.rgba()));
+                ui.picker.show(Tmp.c1.set(color).a(1f), false, res -> configure(res.rgba()));
                 deselect();
             }).size(40f);
         }
