@@ -15,21 +15,19 @@ import mindustry.logic.*;
 import mindustry.ui.*;
 import mindustry.world.*;
 import mindustry.world.meta.*;
-import arc.graphics.Blending;
 
 import static mindustry.Vars.*;
 
 public class HexBlock extends Block{
-    public float brightness = 1f;
+    public float brightness = 0.9f;
     public float radius = 200f;
-
     public TextureRegion topRegion;
 
     @Override
     public void load(){
     super.load();
     topRegion = Core.atlas.find(name + "-top");
-}
+    }
 
     public HexBlock(String name){
         super(name);
@@ -41,6 +39,11 @@ public class HexBlock extends Block{
         swapDiagonalPlacement = true;
 
         config(Integer.class, (HexBuild tile, Integer value) -> tile.color = value);
+    }
+
+    @Override
+    public boolean canReplace(Block other){
+    return other instanceof LightBlockAdditive || super.canReplace(other);
     }
 
     @Override
@@ -80,15 +83,15 @@ public class HexBlock extends Block{
         public void configured(Unit player, Object value){
             super.configured(player, value);
 
-            if(!headless){
-                renderer.minimap.update(tile);
-            }
+            if(!headless) renderer.minimap.update(tile);
         }
 
         @Override
         public void control(LAccess type, double p1, double p2, double p3, double p4){
             if(type == LAccess.color){
                 color = Tmp.c1.fromDouble(p1).rgba8888();
+
+                if(!headless) renderer.minimap.update(tile);
             }
 
             super.control(type, p1, p2, p3, p4);
@@ -103,11 +106,9 @@ public class HexBlock extends Block{
         @Override
         public void draw(){
             super.draw();
-            Draw.blend(Blending.additive);
-            Draw.color(Tmp.c1.set(color), efficiency * 0.3f);
+            Draw.color(Tmp.c1.set(color));
             Draw.rect(topRegion, x, y);
             Draw.color();
-            Draw.blend();
         }
 
         @Override
@@ -118,7 +119,7 @@ public class HexBlock extends Block{
         @Override
         public void buildConfiguration(Table table){
             table.button(Icon.pencil, Styles.cleari, () -> {
-                ui.picker.show(Tmp.c1.set(color).a(1f), true, res -> configure(res.rgba()));
+                ui.picker.show(Tmp.c1.set(color), true, res -> configure(res.rgba()));
                 deselect();
             }).size(40f);
         }
