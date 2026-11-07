@@ -16,7 +16,6 @@ import mindustry.ui.*;
 import mindustry.world.*;
 import mindustry.world.meta.*;
 import arc.graphics.Blending;
-import jtestmod.content.world.LightBlockAdditive;
 
 import static mindustry.Vars.*;
 

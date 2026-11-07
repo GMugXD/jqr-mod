@@ -15,6 +15,7 @@ import mindustry.logic.*;
 import mindustry.ui.*;
 import mindustry.world.*;
 import mindustry.world.meta.*;
+import jqrmod.content.world.LightBlockAdditive;
 
 import static mindustry.Vars.*;
 
