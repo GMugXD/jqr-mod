@@ -14,6 +14,10 @@ public class JQrmod extends Mod {
             "LightBlockAdditive",
             LightBlockAdditive.class
         );
+        ClassMap.classes.put(
+            "HexBlock",
+            HexBlock.class
+        );
     }
 
     @Override
