@@ -1,6 +1,7 @@
 package jqrmod;
 
 import arc.util.Log;
+import jqrmod.content.world.HexBlock;
 import jqrmod.content.world.LightBlockAdditive;
 import mindustry.mod.ClassMap;
 import mindustry.mod.Mod;
